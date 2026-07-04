@@ -1,0 +1,78 @@
+.hm-loading {
+  display: flex;
+  justify-content: center;
+  padding: 32px;
+}
+
+.hm-table-wrap {
+  max-height: 420px;
+  overflow-y: auto;
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius);
+}
+
+.hm-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hm-table thead th {
+  padding: 10px 12px;
+  text-align: left;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--border-gold);
+  background: var(--wood-dark);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.hm-table tbody tr {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: var(--transition);
+}
+
+.hm-table tbody tr:hover {
+  background: var(--bg-card-hover);
+}
+
+.hm-table tbody td {
+  padding: 9px 12px;
+}
+
+.hm-date {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.hm-gold {
+  font-family: var(--font-heading);
+  color: var(--gold-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.hm-ant {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.hm-motivo {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hm-admin {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}

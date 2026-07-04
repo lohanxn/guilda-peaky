@@ -1,0 +1,36 @@
+.wealth-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wealth-row {
+  display: grid;
+  grid-template-columns: 30px 1fr 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.wealth-rank { text-align: right; }
+.wealth-name { font-size: 0.875rem; }
+
+.wealth-bar-track {
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.wealth-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary));
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+.wealth-pct { white-space: nowrap; }
+
+@media (max-width: 600px) {
+  .wealth-row { grid-template-columns: 24px 1fr auto; }
+  .wealth-bar-track, .wealth-pct { display: none; }
+}

@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  password  String
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  historico Historico[]
+}
+
+model Membro {
+  id            Int      @id @default(autoincrement())
+  nomeRP        String
+  ouro          Float    @default(0)
+  observacoes   String?
+  ativo         Boolean  @default(true)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  historico     Historico[]
+}
+
+model BancoGuilda {
+  id        Int      @id @default(autoincrement())
+  saldo     Float    @default(0)
+  updatedAt DateTime @updatedAt
+}
+
+model Historico {
+  id            Int      @id @default(autoincrement())
+  membroId      Int?
+  adminId       Int
+  operacao      String   // ADD, REMOVE, SET, DEPOSITO, SAQUE
+  quantidade    Float
+  saldoAnterior Float
+  saldoNovo     Float
+  motivo        String
+  referencia    String?  // "banco" quando envolvido banco
+  createdAt     DateTime @default(now())
+
+  membro        Membro?  @relation(fields: [membroId], references: [id])
+  admin         Admin    @relation(fields: [adminId], references: [id])
+}
