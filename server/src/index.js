@@ -13,7 +13,11 @@ const dashboardRoutes = require('./routes/dashboard.routes');
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+  origin: [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'https://lohanxn-guilda-peaky.vercel.app'
+  ],
   credentials: true
 }));
 
